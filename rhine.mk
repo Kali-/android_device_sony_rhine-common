@@ -220,5 +220,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
 
+# Our /cache is big enough to dexopt /system apps to it.
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dexopt-data-only=0
+
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/rhine-common/rhine-common-vendor.mk)
